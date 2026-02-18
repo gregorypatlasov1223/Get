@@ -10,7 +10,7 @@ class R2R_DAC:
         GPIO.setup(self.gpio_bits, GPIO.OUT, initial = 0)
 
     def deinit(self):
-        GPIO.putput(self.gpio_bits, 0)
+        GPIO.output(self.gpio_bits, 0)
         GPIO.cleanup()
 
     def set_number(self, number):
