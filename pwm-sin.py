@@ -1,4 +1,4 @@
-import r2r_dac as r2r
+import pwm_dac as pd
 import signal_generator as sg
 import time
 
@@ -11,7 +11,7 @@ if __name__ == "__main__":
         amplitude = float(input("Введите амплитуду: "))
         signal_frequency = float(input("Введите частоту сигнала: "))
         sampling_frequency = float(input("Введите частоту дискретизации: "))
-        dac = r2r.R2R_DAC([16, 20, 21, 25, 26, 17, 27, 22], 3.15, True)
+        dac = pd.PWM_DAC(12, 3000, 3.3, True)
         n = 0
         while True:
             voltage = amplitude*sg.get_sin_wave_amplitude(signal_frequency, 1/sampling_frequency*n)
